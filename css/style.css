@@ -48,7 +48,7 @@ nav.navbar a, .nav-link{
     font-size: 18px;
     padding: 0px 15%;
 }
-.banner-heading form.d-flex {
+.banner-heading div.d-flex {
     justify-content: center;
     flex-direction: column;
     align-items: center;
@@ -57,4 +57,38 @@ nav.navbar a, .nav-link{
 .banner-heading button.btn.btn-outline-success {
     width: 124px;
     margin-top: 25px;
+}
+.alert.alert-danger {
+    padding: 5px 10px;
+    font-size: 15px;
+    margin-top: 5px;
+    display: none;
+}
+
+
+/* ///////////////////////////////////////// */
+.quiz_page{
+    height: 20vh;
+}
+section.quiz_section {
+    margin: 100px 50px;
+}
+
+.quiz_sect_content img.img-fluid.rounded-start {
+    /* justify-content: center; */
+    /* align-items: center; */
+    /* display: flex; */
+    margin-top: 15%;
+}
+
+.quiz_sect_content .row {
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    align-content: space-evenly;
+    flex-wrap: wrap;
+}
+.quiz_sect_content .row a{
+    text-decoration: none;
+    color: black;
 }
