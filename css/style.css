@@ -1,0 +1,60 @@
+*{
+    padding: 0;
+    margin: 0;
+}
+.container-fluid{
+    padding: 0;
+    margin: 0;
+}
+.banner {
+    background: linear-gradient(64deg, #1e252c, #0c0f1c6e),url(https://wallpaperaccess.com/full/1947484.jpg);
+    height: 100%;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+    /* background: #ffb6c12b; */
+    /* background-blend-mode: darken; */
+    background-position: center;
+}
+nav.navbar.navbar-expand-lg.bg-dark {
+    background: #15182000 !important;
+    /* color: whitw; */
+
+}
+nav.navbar a, .nav-link{
+    color: #ededed !important;
+}
+.content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    
+}
+.banner-heading {
+    width: 65%;
+    color: whitesmoke;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    flex-wrap: wrap;
+}
+.banner-heading h1 {
+    font-size: 95px;
+}
+.banner-heading p {
+    margin: 25px 0px;
+    font-size: 18px;
+    padding: 0px 15%;
+}
+.banner-heading form.d-flex {
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    flex-wrap: wrap;
+}
+.banner-heading button.btn.btn-outline-success {
+    width: 124px;
+    margin-top: 25px;
+}
