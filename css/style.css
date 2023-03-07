@@ -100,4 +100,22 @@ img#banner_img {
     border-radius: 3px;
     margin-right: 15px;
 }
+.accordion-body {
+    margin: 25px 25px 30px;
+    height: 195px;
+}
+.quest-btn-group {
+    margin: 15px 0px;
+    float: right;
+}
 
+.quest-btn-group .ques-submit{
+    background: #0101b9a8;
+}
+
+.quest-btn-group .ques-submit:hover,
+.quest-btn-group .ques-submit:focus
+.quest-btn-group .ques-submit:active
+{
+    background: #121297;
+}

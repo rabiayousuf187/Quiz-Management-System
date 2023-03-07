@@ -35,26 +35,30 @@ html_ques.map((ele,index)=>{
     <div id="collapse${indexCapText}" class="accordion-collapse collapse show" aria-labelledby="heading${indexCapText}" data-bs-parent="#accordionExample">
     <div class="accordion-body">
         <div class="form-check">
-            <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios2" value="">
-            <label class="form-check-label" for="exampleRadios2">${ele.opt[0]}</label>
+            <input class="form-check-input" type="radio" name="opt" id="exampleRadios2" value="">
+            <label class="form-check-label" for="opt">${ele.opt[0]}</label>
         </div>
         <div class="form-check">
-            <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios2" value="option2">
-            <label class="form-check-label" for="exampleRadios2">${ele.opt[1]}</label>
+            <input class="form-check-input" type="radio" name="opt" id="exampleRadios2" value="option2">
+            <label class="form-check-label" for="opt">${ele.opt[1]}</label>
         </div>
         <div class="form-check">
-            <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios2" value="option2">
-            <label class="form-check-label" for="exampleRadios2">${ele.opt[2]}</label>
+            <input class="form-check-input" type="radio" name="opt" id="exampleRadios2" value="option2">
+            <label class="form-check-label" for="opt">${ele.opt[2]}</label>
         </div>
         <div class="form-check">
-            <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios2" value="option2">
-            <label class="form-check-label" for="exampleRadios2">${ele.opt[3]}</label>
+            <input class="form-check-input" type="radio" name="opt" id="exampleRadios2" value="option2">
+            <label class="form-check-label" for="opt">${ele.opt[3]}</label>
+        </div>
+        <div class="quest-btn-group">
+            <button type="button" class="btn btn-success" id="show-btn-${ele.id}" >Show Answer</button>
+            <button type="button" class="btn btn-primary ques-submit" id="check-btn-${ele.id}" onclick="ques_submit(${ele.ans})">Submit</button>
         </div>
     </div>
     </div>
     </div>`;
 
-    console.log(ques_ele);
+    // console.log(ques_ele);
     
     let ques_div = document.querySelector('#accordionExample');
     ques_div.insertAdjacentHTML('beforeend', ques_ele);
@@ -105,6 +109,34 @@ function convertNumberToEnglish(number) {
 
   function capitalize(str) {
     return str.charAt(0).toUpperCase() + str.slice(1);
+  }
+
+  function ques_submit(actual_ans){
+
+    actual_ans = actual_ans.value;
+    let msg = document.querySelector('.accordion-body');
+    console.log("actual_ans ====== ",actual_ans);
+    
+    let sel_ans = document.querySelector('input[name = "opt" ]:checked' );
+    if ( sel_ans != null ){
+        if( sel_ans === actual_ans ){
+            msg.insertAdjacentHTML('afterend',`<div class="alert alert-success d-flex align-items-center" role="alert"><svg class="bi flex-shrink-0 me-2" role="img" aria-label="Sluccess:"><use xink:href="#check-circle-fill"/></svg><div>Correct Answer</div></div>`);
+        }
+        else{
+            msg.insertAdjacentHTML('afterend',`<div class="alert alert-danger d-flex align-items-center" role="alert">
+            <svg class="bi flex-shrink-0 me-2" role="img" aria-label="Danger:"><use xlink:href="#exclamation-triangle-fill"/></svg>
+            <div>Wrong Answer</div>
+            </div>`);
+        }
+    }
+    else{
+        msg.insertAdjacentHTML('afterend',`<div class="alert alert-danger d-flex align-items-center" role="alert">
+            <svg class="bi flex-shrink-0 me-2" role="img" aria-label="Danger:"><use xlink:href="#exclamation-triangle-fill"/></svg>
+            <div>Please Select atleast One Option</div>
+            </div>`);
+    }
+   
+
   }
 
 
