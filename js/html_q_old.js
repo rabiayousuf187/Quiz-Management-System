@@ -30,30 +30,6 @@ html_ques.map((ele,index)=>{
     
     console.log("indexCapText" , indexCapText);
 
-    function create_div( ele, id, cls, typ, ele_name, funct ){
-      const element = document.createElement(ele);
-      element.setAttribute('id' , id);
-      element.setAttribute('class' , cls);
-      element.setAttribute('type' , typ);
-      element.textContent = ele_name;
-      element.onclick =()=>{ funct };
-
-      return element;
-    }
-    
-    let main_div = create_div('div', '', 'accordion-item', '', '', '' );
-    console.log("main_div ===== ",main_div);
-    
-    let heading = create_div('h1', `heading${indexCapText}`, 'accordion-header', '', '', '' );
-    console.log("main_div ===== ",heading);
-    
-    let qus_btn = create_div('button', '', 'accordion-button', 'button', `# ${index} ${ele.ques}`, '' );
-    qus_btn.setAttribute('data-bs-toggle','collapse');
-    qus_btn.setAttribute('data-bs-target',`#collapse${indexCapText}`);
-    qus_btn.setAttribute('aria-expanded',true);
-    qus_btn.setAttribute('aria-controls',`collapse${indexCapText}`);
-    console.log("qus_btn ===== ", qus_btn);
-
     let ques_ele = `<div class="accordion-item">
     <h2 class="accordion-header" id="heading${indexCapText}">
     <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse${indexCapText}" aria-expanded="true" aria-controls="collapse${indexCapText}">
